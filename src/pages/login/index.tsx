@@ -1,11 +1,11 @@
 
 import React, { useContext } from 'react';
-import { TextInput, Dimensions } from 'react-native';
-import { Container, Form, Title, Buttom, ResetSenhaContent, Text, Footer, Ipunt, TextButtom } from './styles';
+import { Dimensions } from 'react-native';
+import { Container, Form, Buttom, ResetPasswordContent, Text, Footer, Ipunt, TextButtom } from './styles';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import AuthContext from '../../contexts/AuthContext'
 
-const { width, height } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 const Login: React.FC = () => {
   const { signIn, user } = useContext(AuthContext);
@@ -28,11 +28,11 @@ const Login: React.FC = () => {
             placeholderTextColor="#808080"
             style={{ fontSize: 15 }}
           />
-          <ResetSenhaContent>
+          <ResetPasswordContent>
             <Text>
               Esqueci minha senha
             </Text>
-          </ResetSenhaContent>
+          </ResetPasswordContent>
           <Buttom altura={height * 0.08}>
             <TextButtom>
               Logar
@@ -40,7 +40,6 @@ const Login: React.FC = () => {
           </Buttom>
         </Form>
         <Footer>
-
         </Footer>
       </KeyboardAwareScrollView>
     </Container>

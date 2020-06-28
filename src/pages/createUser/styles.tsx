@@ -9,9 +9,6 @@ export const Container = styled.SafeAreaView`
   background: #fff
 `;
 
-export const Title = styled.Text`
-`;
-
 export const Form = styled.View<Props>`
   margin-top: 10%;
   padding: 3%;
@@ -23,15 +20,6 @@ export const Ipunt = styled.TextInput`
   border-radius: 10px;
   margin-bottom: 15px;
   background-color: rgba(196, 196, 196, 0.24);
-`;
-
-export const ResetPasswordContent = styled.TouchableOpacity`
-
-`;
-
-export const Text = styled.Text`
-  text-align: center
-  color: red;
 `;
 
 export const Buttom = styled.TouchableOpacity<Props>`
@@ -48,9 +36,3 @@ export const TextButtom = styled.Text`
   font-size: 20px;
   font-weight: bold;
 `;
-
-export const Footer = styled.View`
-
-  padding-bottom: 50px
-`;
-
