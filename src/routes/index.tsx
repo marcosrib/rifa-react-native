@@ -1,8 +1,8 @@
 import React from 'react';
 import AuthRoutes from './auth.routes';
-
+import RifaRoutes from './rifa.routes';
 const Routes: React.FC = () => {
-  return <AuthRoutes/>
+  return <RifaRoutes/>
 }
 
 export default Routes;
