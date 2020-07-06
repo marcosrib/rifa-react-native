@@ -21,11 +21,9 @@ const numeros = ["01", "02", "03", "04", "05", "06", "07", "07", "01", "02", "03
 
 const { height } = Dimensions.get('window');
 const numberHeight = height * 0.07;
+
 const RifaDetail: React.FC = () => {
-
-
   return (
-
     <Container>
       <ScrollView>
         <Title>Urso</Title>
