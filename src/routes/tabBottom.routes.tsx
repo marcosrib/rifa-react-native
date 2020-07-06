@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import RifaDetail from '../pages/rifaDetail';
+import Rifas from '../pages/rifas';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -17,12 +17,11 @@ export default function Tabs() {
       activeColor="#F6474F"
       inactiveColor="#000"
       shifting={true}
-      screenOptions={{fontSize: 40}}
-      barStyle={{ backgroundColor: '#FFF', fontSize: 10 }}
+      barStyle={{ backgroundColor: '#FFF' }}
     >
        <Tab.Screen
         name="Home"
-        component={RifaDetail}
+        component={Rifas}
         options={{
           tabBarLabel:<Text style={{fontSize: 15}}>Home</Text>,
           tabBarIcon: (activeColor: Object ) => {
@@ -35,7 +34,7 @@ export default function Tabs() {
       />
       <Tab.Screen
         name="MinhasRifas"
-        component={RifaDetail}
+        component={Rifas}
         options={{
           tabBarLabel:<Text style={{fontSize: 15}}>Minhas rifas</Text>,
           tabBarIcon: (activeColor: Object ) => {
@@ -48,7 +47,7 @@ export default function Tabs() {
       />
        <Tab.Screen
         name="Perfil"
-        component={RifaDetail}
+        component={Rifas}
         options={{
           tabBarLabel:<Text style={{fontSize: 15}}>Perfil</Text>,
           tabBarIcon: (activeColor: Object ) => {
