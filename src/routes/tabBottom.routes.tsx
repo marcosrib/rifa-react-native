@@ -4,6 +4,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Rifas from '../pages/rifas';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+
 const Tab = createMaterialBottomTabNavigator();
 
 interface Object {

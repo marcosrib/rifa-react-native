@@ -1,15 +1,21 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, Header } from '@react-navigation/stack';
 
 import { options } from './options';
 
 import CreateRifa from '../pages/createRifa';
 import RifaDetail from '../pages/rifaDetail';
+import Tabs from './tabBottom.routes';
 
 const RifaStack = createStackNavigator();
 
 const rifaRoutes: React.FC = () => (
-  <RifaStack.Navigator initialRouteName='RifaDetail'>
+  <RifaStack.Navigator initialRouteName='Tabs'>
+    <RifaStack.Screen
+      name="Tabs"
+      component={Tabs}
+      options={{ headerShown: false }}
+    />
     <RifaStack.Screen
       name="CreateRifa"
       component={CreateRifa}

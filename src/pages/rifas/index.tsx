@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Props } from 'react';
 import { FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ItemList from '../../components/ItemList';
+import { useNavigation } from '@react-navigation/core';
 
 import {
   Container,
@@ -13,9 +14,11 @@ import {
 } from './styles';
 
 
-
-
 const Rifas: React.FC = () => {
+
+  const navigation = useNavigation();
+
+
 
   const DATA = [
     {
@@ -46,9 +49,11 @@ const Rifas: React.FC = () => {
 
   ];
 
- 
+  function addRifa() {
+    navigation.navigate('CreateRifa');
+  }
 
-  const FlatListItemSeparator = () => {
+  function FlatListItemSeparator() {
     return (
       //Item Separator
       <Separator />
@@ -60,8 +65,8 @@ const Rifas: React.FC = () => {
     <Container>
       <Header>
         <TextHeader>Rifas</TextHeader>
-        <ButtonAdd>
-        <Icon name="add" size={30} color="black" />
+        <ButtonAdd onPress={addRifa}>
+          <Icon name="add" size={30} color="black" />
         </ButtonAdd>
       </Header>
       <ListContent>
