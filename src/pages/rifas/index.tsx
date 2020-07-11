@@ -1,12 +1,19 @@
-import React, { Props } from 'react';
-import { FlatList, View } from 'react-native';
+import React from 'react';
+import { FlatList } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import ItemList from '../../components/ItemList';
 
-import { Container, Header, TextHeader, ListContent, Item, TextItem } from './styles';
-import { Title } from '../initial/styles';
+import {
+  Container,
+  Header,
+  TextHeader,
+  ListContent,
+  Separator,
+  ButtonAdd
+} from './styles';
 
-interface ItemProps {
-  title: string;
-}
+
+
 
 const Rifas: React.FC = () => {
 
@@ -24,47 +31,27 @@ const Rifas: React.FC = () => {
       title: 'Third Item',
     },
     {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      id: '58694a0f-3da1-471f-bd96-145571e29fff2',
+      title: 'teste 5 Item',
     },
     {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      id: '58694a0f-3da1-471f-bd96-145571eggd72',
+      title: 'teste 4 Item',
     },
     {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      id: '58694a0f-3da1-471f-bd96-14557rr29d72',
+      title: 'teste 6 Item',
     },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-    },
+
+
   ];
 
-  const ItemList = ({ title } : ItemProps) => {
-    return (
-      <Item>
-        <TextItem>{title}</TextItem>
-      </Item>
-    );
-  }
+ 
 
   const FlatListItemSeparator = () => {
     return (
       //Item Separator
-      <View style={{height: 0.5, width: '100%', backgroundColor: '#C8C8C8'}}/>
+      <Separator />
     );
   };
 
@@ -72,16 +59,19 @@ const Rifas: React.FC = () => {
   return (
     <Container>
       <Header>
-        <TextHeader></TextHeader>
+        <TextHeader>Rifas</TextHeader>
+        <ButtonAdd>
+        <Icon name="add" size={30} color="black" />
+        </ButtonAdd>
       </Header>
       <ListContent>
         <FlatList
           data={DATA}
           ItemSeparatorComponent={FlatListItemSeparator}
-          renderItem={({ item }) => <ItemList title={item.title} />}
+          renderItem={({ item }) => <ItemList title={item.title} id={item.id} />}
           keyExtractor={item => item.id}
         />
-      </ListContent>
+      </ListContent >
     </Container>
   );
 }
