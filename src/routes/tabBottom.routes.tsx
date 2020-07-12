@@ -1,9 +1,11 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import Rifas from '../pages/rifas';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import MyRifas from '../pages/myRifas';
+import Rifas from '../pages/rifas';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -34,8 +36,8 @@ export default function Tabs() {
         }}
       />
       <Tab.Screen
-        name="MinhasRifas"
-        component={Rifas}
+        name="MyRifas"
+        component={MyRifas}
         options={{
           tabBarLabel:<Text style={{fontSize: 15}}>Minhas rifas</Text>,
           tabBarIcon: (activeColor: Object ) => {
