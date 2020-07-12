@@ -9,6 +9,7 @@ export const HeaderContent = styled.View`
   border-bottom-width: 1px;
   justify-content: space-between;
   align-items: center;
+  position: relative
 `;
 
 export const ButtonAdd = styled.TouchableOpacity`
