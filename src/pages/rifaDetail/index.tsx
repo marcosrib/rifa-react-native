@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Dimensions } from 'react-native';
 import {
   Container,
@@ -14,6 +14,8 @@ import {
   TextNumber
 } from './styles';
 
+import StompWS from 'react-native-stomp-websocket';
+
 const d = {
   texto: " 1° LUGAR UMA  OVELHA  ST INÊS sorteio será dia 5 de Junio /ln O VALOR DO PONTO E $ 12 Reais A PARTIR DE DOIS PONTOS SAI A 10 REAIS O GANHANDO SERÁ QUEM ACERTA OS ÚLTIMOS 2 NÚMEROS DO SORTEIO DO JOGO DO BICHO A OVELHA SE ENCONTRA NA  LOCALIDADE: CANAVIHEIRA, MUNICÍPIO DE SÃO JOÃO DO PIAUÍ "
 }
@@ -23,6 +25,20 @@ const { height } = Dimensions.get('window');
 const numberHeight = height * 0.07;
 
 const RifaDetail: React.FC = () => {
+ 
+  useEffect(() => {
+    const client = StompWS.client('ws://192.168.0.3:8080/ws');
+    client.connect({}, () => {
+      client.subscribe(
+        '/topic/messages', function (message: any) {
+          console.log(message.body);
+        }
+      );
+    });
+  }, [])
+
+
+
   return (
     <Container>
       <ScrollView>

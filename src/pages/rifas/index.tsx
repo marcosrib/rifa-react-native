@@ -1,8 +1,12 @@
+
 import React, { useEffect, useState } from 'react';
 import { FlatList, View, ActivityIndicator } from 'react-native';
+
+
 import ItemList from '../../components/ItemList';
 
 import { Container, ListContent } from './styles';
+
 
 import Header from '../../components/header';
 import Separator from '../../components/separator';
@@ -17,7 +21,7 @@ const Rifas: React.FC = () => {
   useEffect(() => {
     async function getData() {
       const data = await getRifas();
-        setData(data.data.content);
+      setData(data.data.content);
     }
     getData()
 
