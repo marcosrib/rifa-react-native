@@ -36,3 +36,8 @@ export const TextButtom = styled.Text`
   font-size: 20px;
   font-weight: bold;
 `;
+
+export const TextError = styled.Text`
+  color: #ff0000
+`;
+
