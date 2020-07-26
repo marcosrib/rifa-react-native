@@ -8,3 +8,4 @@ export const ListContent = styled.View`
   flex: 6;
   background: #fff
 `;
+

@@ -50,56 +50,57 @@ const CreateUser: React.FC = () => {
             password: '',
             confirmPassword: ''
           }}
-          onSubmit={(values, errors) => {
-            console.log(errors);
-
+          onSubmit={values => {
             handleCreateUser(values)
           }}
           validationSchema={validateForm}
         >
-          {({ values, handleSubmit, handleChange, errors }) => (
-            <Form altura={height * 0.6}>
-              <TextError >{messageError(errors.name)}</TextError>
-              <Ipunt
-                placeholder="Nome:"
-                placeholderTextColor="#808080"
-                style={{ fontSize: 15 }}
-                onChangeText={handleChange('name')}
-                value={values.name}
-              />
-              <TextError >{messageError(errors.email)}</TextError>
-              <Ipunt
-                placeholder="Email:"
-                placeholderTextColor="#808080"
-                style={{ fontSize: 15 }}
-                onChangeText={handleChange('email')}
-                value={values.email}
-              />
-              <TextError >{messageError(errors.password)}</TextError>
-              <Ipunt
-                placeholder="Senha:"
-                placeholderTextColor="#808080"
-                style={{ fontSize: 15 }}
-                onChangeText={handleChange('password')}
-                value={values.password}
-              />
-              <TextError >{messageError(errors.confirmPassword)}</TextError>
-              <Ipunt
-                placeholder="Confirma senha:"
-                placeholderTextColor="#808080"
-                style={{ fontSize: 15 }}
-                onChangeText={handleChange('confirmPassword')}
-                value={values.confirmPassword}
-              />
+          {({ values, handleSubmit, handleChange, errors }) => {
 
-              <Buttom
-                altura={height * 0.08}
-                onPress={handleSubmit}
-              >
-                <TextButtom>Salvar</TextButtom>
-              </Buttom>
-            </Form>
-          )}
+            return (
+              <Form altura={height * 0.6}>
+                <TextError >{messageError(errors.name)}</TextError>
+                <Ipunt
+                  placeholder="Nome:"
+                  placeholderTextColor="#808080"
+                  style={{ fontSize: 15 }}
+                  onChangeText={handleChange('name')}
+                  value={values.name}
+                />
+                <TextError >{messageError(errors.email)}</TextError>
+                <Ipunt
+                  placeholder="Email:"
+                  placeholderTextColor="#808080"
+                  style={{ fontSize: 15 }}
+                  onChangeText={handleChange('email')}
+                  value={values.email}
+                />
+                <TextError >{messageError(errors.password)}</TextError>
+                <Ipunt
+                  placeholder="Senha:"
+                  placeholderTextColor="#808080"
+                  style={{ fontSize: 15 }}
+                  onChangeText={handleChange('password')}
+                  value={values.password}
+                />
+                <TextError >{messageError(errors.confirmPassword)}</TextError>
+                <Ipunt
+                  placeholder="Confirma senha:"
+                  placeholderTextColor="#808080"
+                  style={{ fontSize: 15 }}
+                  onChangeText={handleChange('confirmPassword')}
+                  value={values.confirmPassword}
+                />
+
+                <Buttom
+                  altura={height * 0.08}
+                  onPress={handleSubmit}
+                >
+                  <TextButtom>Salvar</TextButtom>
+                </Buttom>
+              </Form>
+            )
+          }}
         </Formik>
       </KeyboardAwareScrollView>
     </Container>

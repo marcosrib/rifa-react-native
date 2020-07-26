@@ -16,7 +16,7 @@ import {
 
 interface ItemProps {
   title: string;
-  id: string;
+  id: number;
 }
 
 const ItemList: React.FC<ItemProps> = ({ title, id }) => {
