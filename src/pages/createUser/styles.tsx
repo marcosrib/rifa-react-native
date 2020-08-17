@@ -16,7 +16,7 @@ export const Form = styled.View<Props>`
 `;
 
 export const Ipunt = styled.TextInput`
-  height: 50px;
+  height: 80px;
   border-radius: 10px;
   margin-bottom: 15px;
   background-color: rgba(196, 196, 196, 0.24);

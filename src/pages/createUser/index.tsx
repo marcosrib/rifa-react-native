@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions, KeyboardAvoidingView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -42,7 +42,7 @@ const CreateUser: React.FC = () => {
 
   return (
     <Container>
-      <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView >
         <Formik
           initialValues={{
             name: '',
@@ -58,7 +58,7 @@ const CreateUser: React.FC = () => {
           {({ values, handleSubmit, handleChange, errors }) => {
 
             return (
-              <Form altura={height * 0.6}>
+              <Form altura={height * 0.8}>
                 <TextError >{messageError(errors.name)}</TextError>
                 <Ipunt
                   placeholder="Nome:"

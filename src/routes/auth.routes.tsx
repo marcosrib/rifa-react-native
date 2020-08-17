@@ -12,11 +12,11 @@ const AuthStack = createStackNavigator();
 
 
 const AuthRoutes: React.FC = () => (
-  <AuthStack.Navigator initialRouteName='Login'>
+
+  <AuthStack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Login'>
     <AuthStack.Screen
       name="Login"
       component={Login}
-      options={options("Entrar", "30%")}
     />
     <AuthStack.Screen
       name="Initial"
